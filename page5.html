@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <title>About Us - Reveal The Beauty of Skin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+        main {
+            padding: 60px 0;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            height: 3px;
+            width: 100px;
+            background-color: #4CAF50;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 0 50px;
+        }
+
+        .mission-vision {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .mission-vision div {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .mission-vision div:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-vision h3 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .story-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .story-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 0 50px;
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            padding: 20px 0;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .image-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .image-section img {
+            max-width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-section img:hover {
+            transform: scale(1.02);
+        }
+
+        .values-section {
+            margin-top: 60px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .values-grid div {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .values-grid div:hover {
+            transform: translateY(-5px);
+        }
+
+        .values-grid h4 {
+            font-size: 20px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .mission-vision {
+                flex-direction: column;
+            }
+
+            .mission-vision div {
+                width: 100%;
+            }
+
+            nav ul li {
+                margin-left: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .about-text,
+            .story-text {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 28px;
+            }
+        }
+
+        /* Styles for the header with search and navigation */
+        .header {
+            background-color: #fff;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative; /* Needed for absolute positioning of the navbar */
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Pushes elements to the edges */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            margin-right: auto; /* Pushes the logo to the left */
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding-left: 10px;
+            margin-right: 10px; /* Add some margin to the right of the search input */
+        }
+
+        .search-field {
+            border: none;
+            outline: none;
+            padding: 8px;
+            width: 200px;
+        }
+
+        .search-submit {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+        }
+
+        .search-submit ion-icon {
+            color: #555;
+            font-size: 20px;
+        }
+
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Reduced gap for better spacing */
+        }
+
+        .header-action-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            position: relative; /* For badge positioning */
+        }
+
+        .header-action-btn ion-icon {
+            font-size: 24px;
+            color: #555;
+        }
+
+        .header-action-btn .btn-text {
+            font-size: 16px;
+            color: #555;
+            margin-right: 5px;
+        }
+
+        .header-action-btn .btn-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 10px;
+            transform: translate(50%, -50%); /* Correctly position the badge */
+        }
+
+        /* Navbar styles */
+        .navbar {
+            position: absolute; /* Position absolutely within the header */
+            top: 100%; /* Positioned below the header */
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10; /* Ensure it's above other elements */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            transform: translateY(-10px); /* Start slightly above its final position */
+        }
+
+        .navbar.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0); /* Move to its final position */
+        }
+
+
+        .navbar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar-item {
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar-item:last-child {
+            border-bottom: none;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            display: block;
+            width: 100%;
+        }
+
+        .navbar-link:hover {
+            color: #4CAF50;
+        }
+
+        /* Dropdown menu styles */
+        .navbar-item.dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            transform: translateY(-10px);
+            border-radius: 5px;
+            min-width: 200px;
+        }
+
+        .navbar-item.dropdown:hover>.dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+
+        .dropdown-link {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        .dropdown-link:hover {
+            background-color: #f0f0f0;
+            color: #4CAF50;
+        }
+
+        /* Hamburger menu button styles */
+        .nav-open-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            margin-right: 10px;
+        }
+
+        .nav-open-btn .line {
+            width: 100%;
+            height: 3px;
+            background-color: #333;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-open-btn.active .line-1 {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-open-btn.active .line-2 {
+            opacity: 0;
+        }
+
+        .nav-open-btn.active .line-3 {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+
+        <div class="alert">
+          <div class="container">
+            <p class="alert-text">Free Shipping On All U.S. Orders $50+</p>
+          </div>
+        </div>
+    
+        <div class="header-top" data-header>
+          <div class="container">
+    
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+              <span class="line line-1"></span>
+              <span class="line line-2"></span>
+              <span class="line line-3"></span>
+            </button>
+    
+            <div class="input-wrapper">
+              <input type="search" name="search" placeholder="Search product" class="search-field">
+    
+              <button class="search-submit" aria-label="search">
+                <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+    
+            <a href="#" class="logo">
+              <img src="./assets/images/logo.png" width="179" height="26" alt="Glowing">
+            </a>
+    
+            <div class="header-actions">
+    
+              <button class="header-action-btn" aria-label="user">
+                <ion-icon name="person-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+              </button>
+    
+              <button class="header-action-btn" aria-label="favourite item">
+                <ion-icon name="star-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+    
+                <span class="btn-badge">0</span>
+              </button>
+    
+              <button class="header-action-btn" aria-label="cart item">
+                <data class="btn-text" value="0">$0.00</data>
+    
+                <ion-icon name="bag-handle-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+    
+                <span class="btn-badge">0</span>
+              </button>
+    
+            </div>
+    
+            <nav class="navbar">
+              <ul class="navbar-list">
+    
+                <li class="navbar-item dropdown">
+                  <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+                  <ul class="dropdown-menu">
+                      <li><a href="index - Copy.html" class="dropdown-link">Back to Enter Page</a></li>
+                  </ul>
+                </li>
+    
+                <li class="navbar-item dropdown">
+                  <a href="page2.html" class="navbar-link" data-nav-link>Collections</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="page4.html" class="dropdown-link">Descriptions</a></li>
+                    <li><a href="page3.html" class="dropdown-link">Best seller</a></li>
+
+                  </ul>
+                </li>
+    
+                <li class="navbar-item dropdown">
+                  <a href="page5.html" class="navbar-link" data-nav-link>About Us</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="page6.html" class="dropdown-link">Address</a></li>
+                      <li><a href="page5.html" class="dropdown-link">Contact Number</a></li>
+                      <li><a href="page7.html" class="dropdown-link">Company Infomation</a></li>
+                  </ul>
+                </li>
+    
+                <li class="navbar-item dropdown">
+                  <a href="page8.html" class="navbar-link" data-nav-link>FAQ</a>
+                  <ul class="dropdown-menu">
+                  <li><a href="page9.html" class="dropdown-link">Privacy Policy</a></li>
+                </ul>
+                </li>
+    
+                <li class="navbar-item dropdown">
+                  
+                </ul>
+                </li>
+    
+              </ul>
+            </nav>
+    
+          </div>
+        </div>
+    
+      </header>
+
+      
+    <main>
+        <section class="section">
+            <h1 class="section-title">About Us</h1>
+            <div class="about-content">
+                <p class="about-text">
+                    Welcome to Reveal The Beauty of Skin, your dedicated partner in unveiling your skin's natural radiance. We believe that everyone deserves to feel confident and beautiful in their own skin. Our journey began with a passion for skincare and a commitment to providing effective, safe, and personalized solutions. We combine the power of nature with scientific innovation to create products and services that cater to your unique skincare needs.
+                </p>
+                
+            </div>
+            <div class="mission-vision">
+                <div>
+                    <h3>Our Mission</h3>
+                    <p>
+                        To empower individuals to achieve healthy, glowing skin through innovative skincare solutions and personalized care, enhancing their confidence and well-being. We are dedicated to providing products and services that are both effective and safe, using sustainable practices that respect our planet.
+                    </p>
+                </div>
+                <div>
+                    <h3>Our Vision</h3>
+                    <p>
+                        To be a leading and trusted name in the skincare industry, recognized for excellence in quality, innovation, and customer satisfaction, while promoting a world where everyone celebrates their natural beauty. We strive to set new standards in skincare by continuously researching and developing cutting-edge solutions.
+                    </p>
+                </div>
+            </div>
+            <div class="story-content">
+                <h2 class="section-title">Our Story</h2>
+                <p class="story-text">
+                    Reveal The Beauty of Skin was founded on the principle that true beauty radiates from healthy skin. [Insert your brand's story here - e.g., What inspired you to start this business? What were the key milestones? What are your core values?  Include details about the founder(s), the initial challenges, and the growth of the company.  Also mention any significant achievements or recognition.] We are committed to using the finest ingredients, advanced research, and a personalized approach to address your unique skincare needs. Our journey is fueled by a passion for helping people feel their best.
+                </p>
+            </div>
+            <div class="values-section">
+                <h2 class="section-title">Our Core Values</h2>
+                <div class="values-grid">
+                    <div>
+                        <h4>Quality and Safety</h4>
+                        <p>We adhere to the highest standards of quality and safety in sourcing ingredients and manufacturing our products.</p>
+                    </div>
+                    <div>
+                        <h4>Innovation</h4>
+                        <p>We continuously invest in research and development to bring you the latest advancements in skincare.</p>
+                    </div>
+                    <div>
+                        <h4>Personalization</h4>
+                        <p>We understand that every skin is unique, and we offer tailored solutions to meet individual needs.</p>
+                    </div>
+                    <div>
+                        <h4>Sustainability</h4>
+                        <p>We are committed to environmentally responsible practices and sustainable sourcing.</p>
+                    </div>
+                    <div>
+                        <h4>Transparency</h4>
+                        <p>We believe in open and honest communication about our ingredients and processes.</p>
+                    </div>
+                    <div>
+                        <h4>Empowerment</h4>
+                        <p>We strive to empower our customers by providing them with the knowledge and tools to care for their skin effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Reveal The Beauty of Skin. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const navOpenBtn = document.querySelector('.nav-open-btn');
+        const navbar = document.querySelector('.navbar');
+        const navLinks = document.querySelectorAll('.navbar-link');
+
+        function toggleNavbar() {
+            navbar.classList.toggle('active');
+            navOpenBtn.classList.toggle('active');
+        }
+
+        navOpenBtn.addEventListener('click', toggleNavbar);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbar.classList.contains('active')) {
+                    toggleNavbar();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
